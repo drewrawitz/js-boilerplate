@@ -1,0 +1,10 @@
+{
+  "name": "js-boilerplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Drew Rawitz <email@drewrawitz.com>",
+  "license": "MIT",
+  "dependencies": {
+    "eslint": "^3.8.1"
+  }
+}
