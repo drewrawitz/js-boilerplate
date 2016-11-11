@@ -1,3 +1,7 @@
+body {
+  background: resolve('bg.png');
+}
+
 h1 {
-  color: #ff0;
+  font-size: 1rem;
 }

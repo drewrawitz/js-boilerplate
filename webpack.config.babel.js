@@ -16,6 +16,13 @@ module.exports = env => {
     devtool: env.prod ? 'source-map' : 'eval',
     module: {
       loaders: [
+				{
+					test: /\.(jpe?g|png|gif|svg)$/i,
+					loaders: [
+						'file?hash=sha512&digest=hex&name=img/[hash].[ext]',
+						'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+					]
+				},
         {
           test: /\.js$/,
           loaders: ['babel'],
@@ -46,7 +53,14 @@ module.exports = env => {
 				options: {
 					postcss: [
 						require('stylelint')(),
-						require('precss')()
+						require('precss')(),
+            require('postcss-assets')({
+              "basePath": "src/",
+              "cachebuster": true,
+              "loadPaths": ["img/"],
+              "relative": true
+            }),
+						require('pixrem')()
 					]
 				}
 			}),
