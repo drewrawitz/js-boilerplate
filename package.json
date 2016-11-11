@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build:dev": "webpack",
+    "dev": "webpack-dev-server",
     "lint": "eslint src/index.js"
   },
   "devDependencies": {
@@ -14,6 +15,8 @@
     "eslint-plugin-import": "^1.16.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.4.1",
-    "webpack": "2.1.0-beta.25"
+    "webpack": "2.1.0-beta.25",
+    "webpack-dev-server": "2.1.0-beta.0",
+    "webpack-validator": "^2.2.9"
   }
 }
