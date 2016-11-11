@@ -45,8 +45,8 @@ module.exports = env => {
 			new webpack.LoaderOptionsPlugin({
 				options: {
 					postcss: [
-						require('precss')(),
-						require('autoprefixer')()
+						require('stylelint')(),
+						require('precss')()
 					]
 				}
 			}),
