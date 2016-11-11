@@ -3,7 +3,7 @@ class Car {
     Object.assign(this, { year, make, model });
   }
 
-  static sayHi() {
+  sayHi() {
     console.log('Hey there!');
   }
 
