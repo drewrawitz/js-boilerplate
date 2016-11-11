@@ -1,0 +1,14 @@
+$red: #ff0000;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  transition: all 0.3s ease;
+}
+
+h1 {
+  color: $red;
+}
+

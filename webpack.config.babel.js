@@ -1,13 +1,15 @@
 const {resolve} = require('path')
+const webpack = require('webpack')
 const webpackValidator = require('webpack-validator')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = env => {
   return webpackValidator({
     context: resolve('src'),
-    entry: './index.js',
+    entry: './js/index.js',
     output: {
       path: resolve('dist'),
-      filename: 'bundle.js',
+      filename: 'js/bundle.js',
       publicPath: '/dist/',
 			pathinfo: env.prod ? false : true,
     },
@@ -19,7 +21,36 @@ module.exports = env => {
           loaders: ['babel'],
           exclude: /node_modules/
         },
+        {
+          test: /\.css$/,
+          loader: ExtractTextPlugin.extract({
+            fallbackLoader: 'style',
+						loader: [
+							{
+								loader: 'css-loader',
+								query: {
+									modules: true,
+									sourceMaps: true,
+									importLoaders: true
+								}
+							},
+							'postcss-loader'
+						]
+          }),
+          exclude: /node_modules/
+        },
       ]
-    }
+    },
+    plugins: [
+			new webpack.LoaderOptionsPlugin({
+				options: {
+					postcss: [
+						require('precss')(),
+						require('autoprefixer')()
+					]
+				}
+			}),
+      new ExtractTextPlugin({ filename: 'css/main.css', disable: false, allChunks: true  })
+    ]
   })
 }
