@@ -4,10 +4,11 @@ const webpackValidator = require('webpack-validator');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 /* PostCSS Plugins */
-const stylelint = require('stylelint');
-const precss = require('precss');
-const postcssAssets = require('postcss-assets');
 const pixrem = require('pixrem');
+const postcssApply = require('postcss-apply');
+const postcssAssets = require('postcss-assets');
+const postcssImport = require('postcss-import');
+const stylelint = require('stylelint');
 
 module.exports = env =>
   webpackValidator({
@@ -59,7 +60,8 @@ module.exports = env =>
         options: {
           postcss: [
             stylelint(),
-            precss(),
+            postcssImport(),
+            postcssApply(),
             postcssAssets({
               basePath: 'src/',
               cachebuster: true,
