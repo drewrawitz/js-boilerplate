@@ -13,7 +13,12 @@ const stylelint = require('stylelint');
 module.exports = env =>
   webpackValidator({
     context: resolve('src'),
-    entry: './js/index.js',
+    entry: {
+      application: [
+        './js/index.js',
+        './css/styles.css',
+      ],
+    },
     output: {
       path: resolve('dist'),
       filename: 'js/bundle.js',

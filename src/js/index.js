@@ -1,5 +1,3 @@
-import styles from '../css/styles.css'; // eslint-disable-line no-unused-vars
-
 class Car {
   constructor(year, make, model) {
     Object.assign(this, { year, make, model });
