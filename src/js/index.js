@@ -1,11 +1,11 @@
-import styles from '../css/styles.css';
+import styles from '../css/styles.css'; // eslint-disable-line no-unused-vars
 
 class Car {
   constructor(year, make, model) {
     Object.assign(this, { year, make, model });
   }
 
-  sayHi() {
+  static sayHi() {
     console.log('Hey there!');
   }
 
