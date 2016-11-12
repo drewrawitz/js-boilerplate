@@ -5,16 +5,11 @@ class Car {
     Object.assign(this, { year, make, model });
   }
 
-  static sayHi() {
-    console.log('Hey there!');
-  }
-
   displayInfo() {
     const result = `Nice ${this.year} ${this.make} ${this.model}!`;
-    console.log(result);
+    console.log(result); // eslint-disable-line no-console
   }
 }
 
 const camry = new Car('2012', 'Toyota', 'Camry');
-camry.sayHi();
 camry.displayInfo();
