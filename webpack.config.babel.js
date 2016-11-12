@@ -31,7 +31,7 @@ module.exports = env =>
         },
         {
           test: /\.js$/,
-          loaders: ['babel'],
+          loaders: ['babel', 'eslint'],
           exclude: /node_modules/,
         },
         {
