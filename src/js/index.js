@@ -1,3 +1,5 @@
+import '../css/styles.css';
+
 class Car {
   constructor(year, make, model) {
     Object.assign(this, { year, make, model });

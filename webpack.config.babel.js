@@ -1,32 +1,29 @@
-const { resolve } = require('path');
-const webpack = require('webpack');
-const webpackValidator = require('webpack-validator');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+import { resolve } from 'path';
+import webpack from 'webpack';
+import webpackValidator from 'webpack-validator';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 /* PostCSS Plugins */
-const pixrem = require('pixrem');
-const postcssApply = require('postcss-apply');
-const postcssAssets = require('postcss-assets');
-const postcssImport = require('postcss-import');
-const postcssNested = require('postcss-nested');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
+import pixrem from 'pixrem';
+import postcssApply from 'postcss-apply';
+import postcssAssets from 'postcss-assets';
+import postcssImport from 'postcss-import';
+import postcssNested from 'postcss-nested';
+import StyleLintPlugin from 'stylelint-webpack-plugin';
 
 module.exports = env =>
   webpackValidator({
+    devtool: !env.prod ? 'source-map' : 'eval',
     context: resolve('src'),
-    entry: {
-      application: [
-        './js/index.js',
-        './css/styles.css',
-      ],
-    },
+    entry: [
+      './js/index.js',
+    ],
     output: {
       path: resolve('dist'),
       filename: 'js/bundle.js',
       publicPath: '/dist/',
       pathinfo: !env.prod,
     },
-    devtool: !env.prod ? 'source-map' : 'eval',
     module: {
       loaders: [
         {
@@ -47,14 +44,14 @@ module.exports = env =>
             fallbackLoader: 'style',
             loader: [
               {
-                loader: 'css-loader',
+                loader: 'css',
                 query: {
-                  modules: false,
+                  modules: true,
                   sourceMaps: true,
                   importLoaders: true,
                 },
               },
-              'postcss-loader',
+              'postcss',
             ],
           }),
           exclude: /node_modules/,
