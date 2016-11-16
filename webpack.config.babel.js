@@ -8,7 +8,8 @@ const pixrem = require('pixrem');
 const postcssApply = require('postcss-apply');
 const postcssAssets = require('postcss-assets');
 const postcssImport = require('postcss-import');
-const stylelint = require('stylelint');
+const postcssNested = require('postcss-nested');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = env =>
   webpackValidator({
@@ -48,7 +49,7 @@ module.exports = env =>
               {
                 loader: 'css-loader',
                 query: {
-                  modules: true,
+                  modules: false,
                   sourceMaps: true,
                   importLoaders: true,
                 },
@@ -64,9 +65,9 @@ module.exports = env =>
       new webpack.LoaderOptionsPlugin({
         options: {
           postcss: [
-            stylelint(),
-            postcssImport(),
+            postcssImport({ addDependencyTo: webpack }),
             postcssApply(),
+            postcssNested(),
             postcssAssets({
               basePath: 'src/',
               cachebuster: true,
@@ -78,5 +79,10 @@ module.exports = env =>
         },
       }),
       new ExtractTextPlugin({ filename: 'css/main.css', disable: false, allChunks: true }),
+      new StyleLintPlugin({
+        configFile: '.stylelintrc',
+        context: 'src/css',
+        files: ['**/*.css'],
+      }),
     ],
   });
