@@ -31,16 +31,17 @@
     "postcss-cssnext": "^2.8.0",
     "postcss-import": "8.1.0",
     "postcss-loader": "^1.1.1",
+    "postcss-nested": "^1.0.0",
     "precss": "^1.4.0",
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
-    "stylelint": "^7.5.0",
     "stylelint-config-standard": "^14.0.0",
     "webpack": "2.1.0-beta.25",
     "webpack-dev-server": "2.1.0-beta.0",
     "webpack-validator": "^2.2.9"
   },
   "dependencies": {
-    "sanitize.css": "^4.1.0"
+    "sanitize.css": "^4.1.0",
+    "stylelint-webpack-plugin": "^0.4.0"
   }
 }
