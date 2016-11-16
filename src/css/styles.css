@@ -1,5 +1,6 @@
 @import "sanitize.css";
 @import "1_utilities/variables";
+@import "2_base/typography";
 
 body {
   background: resolve('bg.png');
@@ -11,4 +12,8 @@ h1 {
 
 button {
   @apply --disabled;
+}
+
+.derp {
+  background: rgba(0, 0, 0, 0.1);
 }

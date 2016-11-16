@@ -1,0 +1,23 @@
+/* ==========================================================================
+ * Typography
+ * ========================================================================== */
+
+html {
+  font-size: 16px;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+p {
+  margin: 0;
+
+  &:not(:last-child) {
+    margin-bottom: var(--spacing-med);
+  }
+}
+
+.derp {
+  color: red;
+}

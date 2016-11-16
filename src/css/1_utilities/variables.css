@@ -3,6 +3,12 @@
  * ========================================================================== */
 
 :root {
+  --spacing-xl: 48px;
+  --spacing-lg: 36px;
+  --spacing-med: 24px;
+  --spacing-sm: 12px;
+  --spacing-xs: 6px;
+
   --reset: {
     all: initial;
   }
