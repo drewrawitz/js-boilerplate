@@ -8,6 +8,7 @@ html {
 
 body {
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 p {
@@ -16,8 +17,4 @@ p {
   &:not(:last-child) {
     margin-bottom: var(--spacing-med);
   }
-}
-
-.derp {
-  color: red;
 }

@@ -13,7 +13,3 @@ h1 {
 button {
   @apply --disabled;
 }
-
-.derp {
-  background: rgba(0, 0, 0, 0.1);
-}
