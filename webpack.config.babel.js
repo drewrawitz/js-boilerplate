@@ -2,6 +2,7 @@ import { resolve } from 'path';
 import webpack from 'webpack';
 import webpackValidator from 'webpack-validator';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 /* PostCSS Plugins */
 import pixrem from 'pixrem';
@@ -16,7 +17,7 @@ module.exports = env =>
     devtool: !env.prod ? 'source-map' : 'eval',
     context: resolve('src'),
     entry: [
-      './js/index.js',
+      './js/bootstrap.js',
     ],
     output: {
       path: resolve('dist'),
@@ -59,6 +60,11 @@ module.exports = env =>
       ],
     },
     plugins: [
+      new HtmlWebpackPlugin({
+        template: resolve('src/index.html'),
+        filename: 'index.html',
+        inject: 'head',
+      }),
       new webpack.LoaderOptionsPlugin({
         options: {
           postcss: [

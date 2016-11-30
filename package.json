@@ -1,7 +1,7 @@
 {
   "name": "js-boilerplate",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "src/bootstrap.js",
   "author": "Drew Rawitz <email@drewrawitz.com>",
   "license": "MIT",
   "scripts": {
@@ -9,8 +9,8 @@
     "build": "webpack -p --env.prod",
     "prebuild:dev": "rimraf dist",
     "build:dev": "webpack --env.dev",
-    "dev": "webpack-dev-server --env.dev",
-    "lint": "eslint src/index.js"
+    "dev": "webpack --env.dev && webpack-dev-server --env.dev --inline --content-base dist/",
+    "lint": "eslint src/bootstrap.js"
   },
   "devDependencies": {
     "babel-core": "^6.18.2",
@@ -24,6 +24,7 @@
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.4.1",
     "extract-text-webpack-plugin": "^2.0.0-beta",
+    "html-webpack-plugin": "^2.24.1",
     "image-webpack-loader": "^3.0.0",
     "pixrem": "^3.0.2",
     "postcss-apply": "^0.4.0",
