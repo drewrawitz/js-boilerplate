@@ -8,8 +8,5 @@ body {
 
 h1 {
   font-size: 2rem;
-}
-
-button {
-  @apply --disabled;
+  margin: 0;
 }

@@ -1,13 +1,22 @@
-class Car {
-  constructor(year, make, model) {
-    Object.assign(this, { year, make, model });
-  }
+// inferno module
+import Inferno from 'inferno';
 
-  displayInfo() {
-    const result = `Nice ${this.year} ${this.make} ${this.model}!`;
-    console.log(result); // eslint-disable-line no-console
-  }
-}
+// routing modules
+import { Router, Route } from 'inferno-router';
+import createBrowserHistory from 'history/createBrowserHistory';
 
-const camry = new Car('2012', 'Toyota', 'Camry');
-camry.displayInfo();
+// app components
+import MyApp from './components/MyApp';
+import VersionComponent from './components/VersionComponent';
+
+const browserHistory = createBrowserHistory();
+
+const routes = (
+	<Router history={ browserHistory }>
+		<Route component={ MyApp }>
+			<Route path="/" component={ VersionComponent } />
+		</Route>
+	</Router>
+);
+
+Inferno.render(routes, document.getElementById('app'));

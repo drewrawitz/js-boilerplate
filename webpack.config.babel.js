@@ -36,7 +36,8 @@ module.exports = env =>
         },
         {
           test: /\.js$/,
-          loaders: ['babel', 'eslint'],
+          // loaders: ['babel', 'eslint'],
+          loaders: ['babel'],
           exclude: /node_modules/,
         },
         {
@@ -63,7 +64,6 @@ module.exports = env =>
       new HtmlWebpackPlugin({
         template: resolve('src/index.html'),
         filename: 'index.html',
-        inject: 'head',
       }),
       new webpack.LoaderOptionsPlugin({
         options: {
