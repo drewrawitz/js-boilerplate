@@ -7,7 +7,3 @@
 body {
   background: resolve('bg.png');
 }
-
-h1 {
-  font-size: 2rem;
-}

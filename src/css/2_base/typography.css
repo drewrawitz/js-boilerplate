@@ -11,10 +11,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: var(--color-default);
   font-family: var(--font-family-default);
-  font-size: var(--font-size-default);
+  font-size: rem(var(--font-size-default));
   font-weight: var(--font-weight-default);
   line-height: var(--line-height-default);
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-default);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-default);
+  margin: 0;
+}
+
+h1:not([class]) { @apply --heading-h1; }
+h2:not([class]) { @apply --heading-h2; }
+h3:not([class]) { @apply --heading-h3; }
+h4:not([class]) { @apply --heading-h4; }
+h5:not([class]) { @apply --heading-h5; }
+h6:not([class]) { @apply --heading-h6; }
 
 p {
   margin: 0;

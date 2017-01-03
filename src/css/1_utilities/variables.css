@@ -12,6 +12,13 @@
   --color-accent: var(--color-blue);
   --font-family-default: sans-serif;
   --font-family-secondary: serif;
+  --font-size-default: var(--font-size-med);
+  --font-size-xxl: 30px;
+  --font-size-xl: 22px;
+  --font-size-lg: 16px;
+  --font-size-med: 14px;
+  --font-size-sm: 12px;
+  --font-size-xs: 10px;
   --font-weight-default: var(--font-weight-normal);
   --font-weight-bold: 700;
   --font-weight-normal: 400;
@@ -26,6 +33,51 @@
   --transition-duration-default: 0.3s;
   --transition-timing-default: ease-in-out;
   --transition-default: all var(--transition-duration-default) var(--transition-timing-default);
+
+  --heading: {
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-sm);
+
+    &:not(:last-child) {
+      margin-bottom: em(var(--spacing-sm));
+    }
+  }
+
+  --heading-h1: {
+    @apply --heading;
+
+    font-size: rem(var(--font-size-xxl));
+  }
+
+  --heading-h2: {
+    @apply --heading;
+
+    font-size: rem(var(--font-size-xl));
+  }
+
+  --heading-h3: {
+    @apply --heading;
+
+    font-size: rem(var(--font-size-lg));
+  }
+
+  --heading-h4: {
+    @apply --heading;
+
+    font-size: rem(var(--font-size-med));
+  }
+
+  --heading-h5: {
+    @apply --heading;
+
+    font-size: rem(var(--font-size-sm));
+  }
+
+  --heading-h6: {
+    @apply --heading;
+
+    font-size: rem(var(--font-size-xs));
+  }
 
   --reset: {
     all: initial;

@@ -15,7 +15,7 @@
       var(--container-width) +
       var(--spacing-med) * 2
     );
-  padding-left: var(--spacing-med);
-  padding-right: var(--spacing-med);
+  padding-left: em(var(--spacing-med));
+  padding-right: em(var(--spacing-med));
   position: relative;
 }

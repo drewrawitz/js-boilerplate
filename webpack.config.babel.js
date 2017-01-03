@@ -3,15 +3,18 @@ import webpack from 'webpack';
 import webpackValidator from 'webpack-validator';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import StyleLintPlugin from 'stylelint-webpack-plugin';
 
 /* PostCSS Plugins */
 import pixrem from 'pixrem';
 import postcssApply from 'postcss-apply';
 import postcssAssets from 'postcss-assets';
 import postcssCalc from 'postcss-calc';
+import postcssVariables from 'postcss-css-variables';
+import postcssEmify from 'postcss-emify';
 import postcssImport from 'postcss-import';
 import postcssNested from 'postcss-nested';
-import StyleLintPlugin from 'stylelint-webpack-plugin';
+import postcssRemify from 'postcss-remify';
 
 module.exports = env =>
   webpackValidator({
@@ -70,6 +73,7 @@ module.exports = env =>
         options: {
           postcss: [
             postcssImport({ addDependencyTo: webpack }),
+            postcssVariables(),
             postcssApply(),
             postcssNested(),
             postcssAssets({
@@ -79,6 +83,8 @@ module.exports = env =>
               relative: true,
             }),
             postcssCalc(),
+            postcssRemify(),
+            postcssEmify(),
             pixrem(),
           ],
         },
