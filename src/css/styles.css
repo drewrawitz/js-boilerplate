@@ -1,6 +1,8 @@
 @import "sanitize.css";
 @import "1_utilities/variables";
 @import "2_base/typography";
+@import "3_components/buttons";
+@import "4_layout/container";
 
 body {
   background: resolve('bg.png');
@@ -8,8 +10,4 @@ body {
 
 h1 {
   font-size: 2rem;
-}
-
-button {
-  @apply --disabled;
 }

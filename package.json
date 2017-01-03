@@ -29,6 +29,7 @@
     "pixrem": "^3.0.2",
     "postcss-apply": "^0.4.0",
     "postcss-assets": "^4.1.0",
+    "postcss-calc": "5.3.1",
     "postcss-cssnext": "^2.8.0",
     "postcss-import": "9.0.0",
     "postcss-loader": "^1.1.1",

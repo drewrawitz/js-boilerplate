@@ -8,6 +8,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import pixrem from 'pixrem';
 import postcssApply from 'postcss-apply';
 import postcssAssets from 'postcss-assets';
+import postcssCalc from 'postcss-calc';
 import postcssImport from 'postcss-import';
 import postcssNested from 'postcss-nested';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
@@ -47,7 +48,7 @@ module.exports = env =>
               {
                 loader: 'css-loader',
                 query: {
-                  modules: true,
+                  modules: false,
                   sourceMaps: true,
                   importLoaders: true,
                 },
@@ -77,6 +78,7 @@ module.exports = env =>
               loadPaths: ['img/'],
               relative: true,
             }),
+            postcssCalc(),
             pixrem(),
           ],
         },

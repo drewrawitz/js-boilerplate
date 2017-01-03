@@ -3,11 +3,29 @@
  * ========================================================================== */
 
 :root {
+  --container-width: 1200px;
+  --color-blue: #3498db;
+  --color-charcoal: #111;
+  --color-gray: #ccc;
+  --color-default: var(--color-charcoal);
+  --color-muted: var(--color-gray);
+  --color-accent: var(--color-blue);
+  --font-family-default: sans-serif;
+  --font-family-secondary: serif;
+  --font-weight-default: var(--font-weight-normal);
+  --font-weight-bold: 700;
+  --font-weight-normal: 400;
+  --font-weight-light: 300;
+  --line-height-default: 1.5;
+  --line-height-sm: 1.2;
   --spacing-xl: 48px;
   --spacing-lg: 36px;
   --spacing-med: 24px;
   --spacing-sm: 12px;
   --spacing-xs: 6px;
+  --transition-duration-default: 0.3s;
+  --transition-timing-default: ease-in-out;
+  --transition-default: all var(--transition-duration-default) var(--transition-timing-default);
 
   --reset: {
     all: initial;

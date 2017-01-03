@@ -1,0 +1,22 @@
+/* ==========================================================================
+ * Buttons
+ * ========================================================================== */
+
+button {
+  @apply --reset;
+}
+
+.c-button {
+  border: 1px solid var(--color-accent);
+  border-radius: 100px;
+  color: var(--color-accent);
+  display: inline-block;
+  font-family: var(--font-family-default);
+  padding: 0.5em 1em;
+  transition: background-color var(--transition-duration-default) var(--transition-timing-default);
+
+  &:hover {
+    background-color: var(--color-accent);
+    color: #fff;
+  }
+}
