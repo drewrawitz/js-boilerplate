@@ -30,29 +30,29 @@ module.exports = env =>
         {
           test: /\.(jpe?g|png|gif|svg)$/i,
           loaders: [
-            'file?hash=sha512&digest=hex&name=img/[hash].[ext]',
-            'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false',
+            'file-loader?hash=sha512&digest=hex&name=img/[hash].[ext]',
+            'image-webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false',
           ],
         },
         {
           test: /\.js$/,
-          loaders: ['babel', 'eslint'],
+          loaders: ['babel-loader', 'eslint-loader'],
           exclude: /node_modules/,
         },
         {
           test: /\.css$/,
           loader: ExtractTextPlugin.extract({
-            fallbackLoader: 'style',
+            fallbackLoader: 'style-loader',
             loader: [
               {
-                loader: 'css',
+                loader: 'css-loader',
                 query: {
                   modules: true,
                   sourceMaps: true,
                   importLoaders: true,
                 },
               },
-              'postcss',
+              'postcss-loader',
             ],
           }),
           exclude: /node_modules/,
